@@ -1,0 +1,37 @@
+{
+  "schema": "bsv-app",
+  "schemaVersion": "1.0",
+  "topicManagers": {
+    "tm_openADR": "./backend/src/topic-managers/OpenADRTopicManager.ts"
+  },
+  "lookupServices": {
+    "ls_openADR": {
+      "serviceFactory": "./backend/src/lookup-services/OpenADRLookupServiceFactory.ts",
+      "hydrateWith": "mongo"
+    }
+  },
+  "frontend": {
+    "framework": "react",
+    "directory": "./frontend"
+  },
+  "contracts": {
+    "sCrypt": {
+      "directory": "./backend/src/contracts",
+      "deployOnChainFlag": true
+    }
+  },
+  "configs": [
+    {
+      "env": "local",
+      "runtime": "LARS",
+      "ventsPerHost": 1,
+      "httpsPort": 8080
+    },
+    {
+      "name": "Local LARS",
+      "network": "mainnet",
+      "provider": "LARS",
+      "run": ["backend"]
+    }
+  ]
+}

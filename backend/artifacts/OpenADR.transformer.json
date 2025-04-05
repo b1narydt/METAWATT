@@ -1,0 +1,9 @@
+{
+  "success": true,
+  "errors": [],
+  "scryptfile": "OpenADR.scrypt",
+  "sourceMapFile": "OpenADR.scrypt.map",
+  "ctxMethods": [
+    "updateEventOnChain"
+  ]
+}
